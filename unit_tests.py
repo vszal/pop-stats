@@ -2,7 +2,7 @@ import unittest
 
 target = __import__("app")
 
-class TestCovid(unittest.TestCase):
+class TestPopulation(unittest.TestCase):
     def test_census_data(self):
         """
         Test that method returns expected population

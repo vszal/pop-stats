@@ -22,7 +22,7 @@ spec:
   selector:
     matchLabels:
       app: pop-stats
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -30,9 +30,9 @@ spec:
     spec:
       containers:
       - name: pop-stats
-        image: pop-stats:latest
+        image: pop-stats
         ports:
         - containerPort: 8080
         env:
         - name: DEV_EXT_IP
-          value: "97.113.223.41"
+          value: "8.8.4.4"

@@ -1,5 +1,5 @@
 # Python image from https://hub.docker.com/_/python
-FROM python:3.8-alpine
+FROM python:3.9-alpine
 
 #RUN pip install --upgrade pip
 
@@ -19,7 +19,6 @@ COPY --chown=worker:worker . .
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
 ENV PORT 8080
-
 # Run the web service on container startup.
 # --reload flag makes Skaffold hot-deploy work quicker
 CMD exec gunicorn app:app --workers 2 --threads 2 -b 0.0.0.0:8080 --reload
